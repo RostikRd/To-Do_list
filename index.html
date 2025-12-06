@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do: Zlepšenie predmetu Webové technológie</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normal-mode.css" id="theme-stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nápady na zlepšenie predmetu Webové technológie</h1>
+        </header>
+        
+        <!-- Форма додавання -->
+        <section class="add-task-section">
+            <form id="task-form">
+                <div class="form-group">
+                    <input type="text" id="task-input" placeholder="Zadajte nápad na zlepšenie..." required>
+                </div>
+                <div class="form-group">
+                    <select id="category-select" required>
+                        <option value="">Vyberte kategóriu</option>
+                        <option value="Prednášky">Prednášky</option>
+                        <option value="Cvičenia">Cvičenia</option>
+                        <option value="Materiály">Materiály</option>
+                        <option value="Hodnotenie">Hodnotenie</option>
+                        <option value="Organizácia">Organizácia</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Pridať nápad</button>
+            </form>
+        </section>
+        
+        <!-- Фільтри (бонус) -->
+        <section class="filters-section">
+            <h3>Filtrovať podľa kategórie:</h3>
+            <div id="filters" class="filters">
+                <button class="filter-btn active" data-category="all">Všetky</button>
+                <button class="filter-btn" data-category="Prednášky">Prednášky</button>
+                <button class="filter-btn" data-category="Cvičenia">Cvičenia</button>
+                <button class="filter-btn" data-category="Materiály">Materiály</button>
+                <button class="filter-btn" data-category="Hodnotenie">Hodnotenie</button>
+                <button class="filter-btn" data-category="Organizácia">Organizácia</button>
+            </div>
+        </section>
+        
+        <!-- Статистика -->
+        <section class="stats-section">
+            <div id="stats" class="stats">
+                <span class="stat-item">
+                    <strong>Nesplnené:</strong> <span id="uncompleted-count">0</span>
+                </span>
+                <span class="stat-item">
+                    <strong>Splnené:</strong> <span id="completed-count">0</span>
+                </span>
+            </div>
+        </section>
+        
+        <!-- Happy mode повідомлення -->
+        <div id="happy-message" class="happy-message hidden">
+            <p>🎉 Predmet Webové technológie je na dobrej ceste! 🎉</p>
+        </div>
+        
+        <!-- Список задач -->
+        <section class="tasks-section">
+            <h2>Zoznam nápadov</h2>
+            <ul id="task-list" class="task-list">
+                <!-- Динамічно генеровані задачі -->
+            </ul>
+        </section>
+        
+        <!-- Рефлексія -->
+        <section id="reflection" class="reflection-section">
+            <h2>Reflexia</h2>
+            <div class="reflection-content">
+                <p>
+                    Po analýze všetkých nápadov považujem za najdôležitejšie <strong>zlepšenie štruktúry prednášok</strong> 
+                    a <strong>rozšírenie praktických cvičení</strong>. Prednášky by mali byť interaktívnejšie s viacerými 
+                    príkladmi z reálneho sveta, čo by pomohlo študentom lepšie pochopiť teoretické koncepty. 
+                    Praktické cvičenia sú kľúčové pre osvojenie si webových technológií, preto by ich malo byť viac 
+                    a mali by pokrývať rôzne úrovne zložitosti.
+                </p>
+                <p>
+                    Tretím najdôležitejším aspektom je <strong>zlepšenie organizácie a komunikácie</strong>. 
+                    Jasné termíny, jednotné hodnotiace kritériá a lepšia dostupnosť materiálov by výrazne 
+                    zlepšili celkovú skúsenosť so štúdiom predmetu.
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <script src="data/initialTasks.js"></script>
+    <script src="scripts/taskManager.js"></script>
+    <script src="scripts/themeManager.js"></script>
+    <script src="scripts/filterManager.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
+
